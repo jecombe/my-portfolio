@@ -109,7 +109,6 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrls: [
       { name: "frontEnd", url: "https://github.com/jecombe/my-portfolio" },
-      { name: "url", url: "https://stable-coins-analytics.vercel.app" },
     ],
     previewUrl: "https://portfolio-jeremy-combe.vercel.app/",
     technologies: ["Next.js", "Typescript"],
