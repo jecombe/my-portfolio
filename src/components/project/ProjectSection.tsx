@@ -97,7 +97,6 @@ const projectsData = [
         name: "frontEnd",
         url: "https://github.com/jecombe/stable-coin-analytics",
       },
-      { name: "url", url: "https://stable-coins-analytics.vercel.app" },
     ],
     previewUrl: "https://stable-coins-analytics.vercel.app",
     technologies: ["Next.js", "Typescript", "Api Defilama", "unchart"],
@@ -112,7 +111,7 @@ const projectsData = [
       { name: "frontEnd", url: "https://github.com/jecombe/my-portfolio" },
       { name: "url", url: "https://stable-coins-analytics.vercel.app" },
     ],
-    previewUrl: "#",
+    previewUrl: "https://portfolio-jeremy-combe.vercel.app/",
     technologies: ["Next.js", "Typescript"],
   },
   {
