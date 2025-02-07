@@ -104,7 +104,7 @@ const projectsData = [
   {
     id: 7,
     title: "My portfolio",
-    description: "my own portfolio",
+    description: "my own portfolio to describe my multiple projects and my experiences in dev",
     image: "/images/portfolio.png",
     tag: ["All", "Web"],
     gitUrls: [
@@ -128,7 +128,7 @@ const projectsData = [
     id: 9,
     title: "gallery nft",
     description:
-      "Small project to display a collection and allow the user to like it.",
+      "Small project to display a collection NFT and allow the user to like it.",
     image: "/images/galleryNft.png",
     tag: ["All", "Web"],
     gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/gallery-nft" }],
@@ -138,7 +138,7 @@ const projectsData = [
   {
     id: 10,
     title: "Red tetris",
-    description: "School group project (2 people)",
+    description: "School group project (2 people). A reproduction of the classic Tetris game with an added multiplayer feature, using React.js and Socket.io. Players can compete against each other in real time.",
     image: "/images/tetris.jpeg",
     tag: ["All", "Web"],
     gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/Red_tetris" }],
@@ -148,7 +148,7 @@ const projectsData = [
   {
     id: 11,
     title: "42SH",
-    description: "School group project (2 people)",
+    description: "School group project (2 people). This project consists in coding a fully functional shell in C.",
     image: "/images/shell.png",
     tag: ["All", "Algorithm"],
     gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/42sh" }],
@@ -158,7 +158,7 @@ const projectsData = [
   {
     id: 12,
     title: "ft_ls",
-    description: "School project (1 people)",
+    description: "School project (1 people). This project consists in coding a command ls with options.",
     image: "/images/ft_ls.png",
     tag: ["All", "Algorithm"],
     gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/ft_Ls" }],
