@@ -7,43 +7,165 @@ import ProjectCard from "./ProjectCard";
 const projectsData = [
   {
     id: 1,
-    title: "Decentralized Privacy Raffle",
+    title: "Decentralized GeoGuessr Game",
     description:
-      "A decentralized raffle using Zama's homomorphic encryption (fhevm). A user can create a raffle with a time limit, a prize, and a number of tickets. The purchase amounts of users are encrypted, as well as the addresses of the participants.",
-    image: "/images/privacy_raffle.webp",
-    tag: ["All", "Blockchain"],
-    gitUrl: "#",
-    previewUrl: "#",
+      "Participation in the Zama Bounty Challenge: Aims to use Fully Homomorphic Encryption (FHE) on-chain to create a game. I reproduction game GeoGuessr. The location data is represented as NFTs and stored on-chain confidentially using Zama's FHEvm. A token and reward system with NFTs is implemented.",
+    image: "/images/geo.avif",
+    tag: ["All", "Blockchain", "Web"],
+    gitUrls: [
+      { name: "smart contract", url: "https://github.com/jecombe/NFTGuessr" },
+      { name: "frontend", url: "https://github.com/jecombe/prod" },
+      { name: "backend", url: "https://github.com/jecombe/server_nftguessr" },
+      { name: "subject", url: "https://github.com/zama-ai/bounty-program/issues/81" },
+    ],
+    technologies: [
+      "Javascript",
+      "Solidity",
+      "Ethers",
+      "Fhevm",
+      "Next.js",
+      "Nodej.js",
+      "Express",
+      "Google API",
+    ],
   },
   {
     id: 2,
-    title: "Decentralized GeoGuessr Game",
-    description:
-      "Reproduction of the GeoGuessr game in a decentralized manner. The goal is for a player to find the location of a GPS point. The GPS points are securely stored and encrypted on the blockchain using Fhevm.",
-    image: "/images/geoguessr.webp",
-    tag: ["All", "Blockchain", "Web"],
-    gitUrl: "#",
-    previewUrl: "#",
-  },
-  {
-    id: 3,
     title: "Flashloan Trading NFT",
     description:
-      "The goal of this project is to achieve profit through arbitrage between two NFT platforms using flash loans.",
-    image: "/images/flashloan.webp",
-    tag: ["All", "Blockchain"],
-    gitUrl: "#",
+      "The goal is to take advantage of the price difference between SudoSwap AMM and OpenSea. If an NFT is cheaper on OpenSea, I borrow the purchase amount from Aave, instantly buy the NFT on OpenSea, sell it on SudoSwap, repay the loan, and pocket the difference. In this project, the steps are : identify arbitrage opportunities, calculate transaction fees and deduct them to estimate profits, protect transactions against MEV attacks (like sandwich attacks) using Flashbots.",
+    image: "/images/trading.jpg",
+    tag: ["All", "Blockchain", "Algorithm"],
+    gitUrls: [
+      {
+        name: "smart contract",
+        url: "https://github.com/jecombe/Flashloan_Nft",
+      },
+      {
+        name: "algo strategy",
+        url: "https://github.com/jecombe/found_arbitrage",
+      },
+    ],
     previewUrl: "#",
+    technologies: ["Solidity", "Ethereum", "NFT"],
   },
+
+  {
+    id: 3,
+    title: "GitBook analyze LLM",
+    description:
+      "Script to download GitBook documents and have them analyzed by ChatGPT or DeepSeek. A prompt allows users to ask questions about the documentation.",
+    image: "/images/termLlm.gif",
+    tag: ["All", "Algorithm"],
+    gitUrls: [
+      { name: "code", url: "https://github.com/jecombe/gitbook-analyze-llm" },
+    ],
+    previewUrl: "#",
+    technologies: ["Node.js", "Typescript", "OpenAi API"],
+  },
+
   {
     id: 4,
+    title: "Snipping bot bitget for future contract",
+    description: "An algorithm that analyzes newly listed tokens in futures on Bitget. If the token is tradable, the algorithm monitors transactions for 30 minutes and determines whether to take a long or short position. Then, the algorithm manages closing the position, ideally in profit.",
+    image: "/images/trading2.webp",
+    tag: ["All", "Algorithm", "Blockchain"],
+    gitUrls: [],
+    previewUrl: "#",
+    technologies: ["Node.js", "Typescript", "API BitGet"],
+  },
+
+  {
+    id: 5,
+    title: "Snipping bot uniswap",
+    description: "An algorithm that analyzes new pools on Uniswap. Once a new token is detected, it is analyzed using an API (Honeypot). If the token is considered legitimate, the algorithm buys it. After acquiring the token, the algorithm attempts to sell it for a profit.",
+    image: "/images/trading3.jpg",
+    tag: ["All", "Algorithm", "Blockchain"],
+    gitUrls: [],
+    previewUrl: "#",
+    technologies: ["Node.js", "Typescript", "Ethers", "Uniswap SDK", "HoneyPot API"],
+  },
+  {
+    id: 6,
+    title: "Stable Coin Analyse",
+    description:
+      "Small project to display information about stable coin, (depeg, tvl)",
+    image: "/images/stable.png",
+    tag: ["All", "Algorithm"],
+    gitUrls: [
+      {
+        name: "frontEnd",
+        url: "https://github.com/jecombe/stable-coin-analytics",
+      },
+      { name: "url", url: "https://stable-coins-analytics.vercel.app" },
+    ],
+    previewUrl: "https://stable-coins-analytics.vercel.app",
+    technologies: ["Next.js", "Typescript", "Api Defilama", "unchart"],
+  },
+  {
+    id: 7,
+    title: "My portfolio",
+    description: "my own portfolio",
+    image: "/images/portfolio.png",
+    tag: ["All", "Web"],
+    gitUrls: [
+      { name: "frontEnd", url: "https://github.com/jecombe/my-portfolio" },
+      { name: "url", url: "https://stable-coins-analytics.vercel.app" },
+    ],
+    previewUrl: "#",
+    technologies: ["Next.js", "Typescript"],
+  },
+  {
+    id: 8,
     title: "Staking Alert",
     description:
-      "A React Native app providing alerts on token staking status and baker activity.",
-    image: "/images/staking_alert.webp",
-    tag: ["All", "Mobile"],
-    gitUrl: "#",
+      "Staking Alert is a React Native application designed to provide alerts on the status of token staking. For example, it notifies users if a Baker (the entity responsible for staking) is still active and distributing rewards at the correct rate. The application also displays a list of Bakers, the amount delegated to each Baker, and other relevant information. It also notifies you as you receive your reward",
+    image: "/images/stakeAlert.jpg",
+    tag: ["All", "Web"],
+    gitUrls: [{ name: "app", url: "https://github.com/jecombe/stakingAlert" }],
     previewUrl: "#",
+    technologies: ["React Native", "mongoDB"],
+  },
+  {
+    id: 9,
+    title: "gallery nft",
+    description:
+      "Small project to display a collection and allow the user to like it.",
+    image: "/images/galleryNft.png",
+    tag: ["All", "Web"],
+    gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/gallery-nft" }],
+    previewUrl: "#",
+    technologies: ["Javascript", "Next.js"],
+  },
+  {
+    id: 10,
+    title: "Red tetris",
+    description: "School group project (2 people)",
+    image: "/images/tetris.jpeg",
+    tag: ["All", "Web"],
+    gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/Red_tetris" }],
+    previewUrl: "#",
+    technologies: ["React.js", "Socket.io", "Javascript"],
+  },
+  {
+    id: 11,
+    title: "42SH",
+    description: "School group project (2 people)",
+    image: "/images/shell.png",
+    tag: ["All", "Algorithm"],
+    gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/42sh" }],
+    previewUrl: "#",
+    technologies: ["C"],
+  },
+  {
+    id: 12,
+    title: "ft_ls",
+    description: "School project (1 people)",
+    image: "/images/ft_ls.png",
+    tag: ["All", "Algorithm"],
+    gitUrls: [{ name: "Algo", url: "https://github.com/jecombe/ft_Ls" }],
+    previewUrl: "#",
+    technologies: ["C", "Binary Three"],
   },
 ];
 
@@ -52,7 +174,7 @@ const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleTagChange = (newTag) => {
+  const handleTagChange = (newTag: string) => {
     setTag(newTag);
   };
 
@@ -71,10 +193,26 @@ const ProjectsSection = () => {
         My Projects
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
-        <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
-        <ProjectTag onClick={handleTagChange} name="Blockchain" isSelected={tag === "Blockchain"} />
-        <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="All"
+          isSelected={tag === "All"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Web"
+          isSelected={tag === "Web"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Blockchain"
+          isSelected={tag === "Blockchain"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Algorithm"
+          isSelected={tag === "Algorithm"}
+        />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
@@ -90,8 +228,9 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imgUrl={project.image}
-              gitUrl={project.gitUrl}
+              gitUrls={project.gitUrls}
               previewUrl={project.previewUrl}
+              technologies={project.technologies}
             />
           </motion.li>
         ))}

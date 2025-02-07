@@ -100,9 +100,9 @@ const TAB_DATA = [
 
 const AboutMe = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
-  const handleTabChange = (id) => {
+  const handleTabChange = (id: string) => {
     startTransition(() => {
       setTab(id);
     });
@@ -110,39 +110,44 @@ const AboutMe = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about.webp" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            Born in the mountains of Savoie, I am above all a passionate
-            computer enthusiast, even more so than the mountains. Since my
-            teenage years, I have been interested in this field. I have had the
-            opportunity to work in companies related to blockchain and the
-            crypto space. Thanks to my jobs in this field, I was able to improve
-            my learning abilities and achieve a higher level of precision.
-            Always looking for new technological domains and projects.
-          </p>
-          <div className="flex flex-row justify-start mt-8">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              Skills
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              Education
-            </TabButton>
-          </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
+    <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <Image src="/images/about.webp" width={500} height={500} alt={""} />
+      <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+        <p className="text-base lg:text-lg">
+          Born in the mountains of Savoie, I am above all a passionate
+          computer enthusiast, even more so than the mountains. Since my
+          teenage years, I have been interested in this field. I have had the
+          opportunity to work in companies related to blockchain and the
+          crypto space. Thanks to my jobs in this field, I was able to improve
+          my learning abilities and achieve a higher level of precision.
+          Always looking for new technological domains and projects.
+        </p>
+        <div className="flex flex-row justify-start mt-8">
+          <TabButton
+            selectTab={() => handleTabChange("skills")}
+            active={tab === "skills"}
+          >
+            Skills
+          </TabButton>
+          <TabButton
+            selectTab={() => handleTabChange("education")}
+            active={tab === "education"}
+          >
+            Education
+          </TabButton>
+        </div>
+        <div className="mt-8">
+          {
+            TAB_DATA.find((t) => t.id === tab)?.content ?? (
+              <p>Content not found.</p>
+            )
+          }
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  
   );
 };
 

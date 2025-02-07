@@ -1,6 +1,5 @@
 import AboutMe from "@/components/about/AboutMe";
 import Experience from "@/components/experiences/ExperiencesSections";
-import ProfessionalJourney from "@/components/experiences/ExperiencesSections";
 import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/navBar/NavBar";
 import ProjectsSection from "@/components/project/ProjectSection";

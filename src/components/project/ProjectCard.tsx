@@ -2,32 +2,59 @@ import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+interface ProjectCardProps {
+  imgUrl: string;
+  title: string;
+  description: string;
+  gitUrls?: { name: string; url: string }[];
+  previewUrl?: string;
+  technologies: string[];
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title, description, gitUrls = [], previewUrl, technologies }) => {
   return (
-    <div>
+    <div className="bg-[#181818] rounded-xl overflow-hidden shadow-lg">
       <div
-        className="h-52 md:h-72 rounded-t-xl relative group"
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-      >
-        {/* Overlay with links, added z-index and opacity transition */}
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 z-10">
-          <Link
-            href={gitUrl}
-            className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
-          <Link
-            href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
-        </div>
-      </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
+        className="h-52 md:h-72 rounded-t-xl"
+        style={{ background: `url(${imgUrl}) center/cover no-repeat` }}
+      ></div>
+
+      <div className="text-white py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#ADB7BE]">{description}</p>
+        <p className="text-[#ADB7BE] mb-4">{description}</p>
+
+        <div className="mt-4">
+          <h4 className="text-white font-semibold mb-2">Technologies :</h4>
+          <ul className="flex flex-wrap gap-2">
+            {technologies.map((tech, index) => (
+              <li key={index} className="bg-gray-700 px-2 py-1 text-sm rounded">{tech}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-3">
+          {gitUrls.length > 0 ? (
+            gitUrls.map((repo, index) => (
+              <Link key={index} href={repo.url} target="_blank" rel="noopener noreferrer">
+                <div className="flex items-center gap-2 text-blue-400 hover:text-white transition">
+                  <CodeBracketIcon className="h-5 w-5" />
+                  <span>{repo.name}</span>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <p className="text-gray-500">No GitHub link</p>
+          )}
+
+          {previewUrl && previewUrl !== "#" && (
+            <Link href={previewUrl} target="_blank" rel="noopener noreferrer">
+              <div className="flex items-center gap-2 text-blue-400 hover:text-white transition">
+                <EyeIcon className="h-5 w-5" />
+                <span>Live Demo</span>
+              </div>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
