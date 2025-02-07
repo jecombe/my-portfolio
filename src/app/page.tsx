@@ -1,5 +1,7 @@
 import AboutMe from "@/components/about/AboutMe";
+import EmailSection from "@/components/contact/EmailSection";
 import Experience from "@/components/experiences/ExperiencesSections";
+import Footer from "@/components/footer/Footer";
 import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/navBar/NavBar";
 import ProjectsSection from "@/components/project/ProjectSection";
@@ -13,7 +15,10 @@ export default function Home() {
         <AboutMe />
         <Experience/>
         <ProjectsSection/>
+        <EmailSection />
+
       </div>
+      <Footer/>
     </main>
   );
 }
