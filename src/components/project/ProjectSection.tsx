@@ -27,6 +27,8 @@ const projectsData = [
       "Nodej.js",
       "Express",
       "Google API",
+      "Https / SSL",
+      "Hosting server OVH"
     ],
   },
   {
