@@ -1,6 +1,7 @@
+import { NavLinkProps } from "@/interface/interfaces";
 import Link from "next/link";
 
-const NavLink = ({ href, title }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
   return (
     <Link
       href={href}
