@@ -1,6 +1,6 @@
 import React from "react";
 import { MenuOverlayProps } from "@/interface/interfaces";
-import NavLink from "./navBar/NavLink";
+import NavLink from "./NavLink";
 
 const MenuOverlay: React.FC<MenuOverlayProps> = ({ links }) => {
   return (

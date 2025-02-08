@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useTransition } from "react";
-import Image from "next/image";
-import TabButton from "../TabButton";
+import TabButton from "./TabButton";
 import { LinearProgress } from "@mui/material"; // Ajoutez cette importation pour la barre de progression
+import { Compare } from "../aceternity/compare";
 
 const TAB_DATA = [
   {
@@ -111,7 +111,14 @@ const AboutMe = () => {
   return (
     <section className="text-white" id="about">
     <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <Image src="/images/about.webp" width={500} height={500} alt={""} />
+      <Compare
+        firstImage="https://assets.aceternity.com/code-problem.png"
+        secondImage="https://assets.aceternity.com/code-solution.png"
+        firstImageClassName="object-cover object-left-top"
+        secondImageClassname="object-cover object-left-top"
+        className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
+        slideMode="hover"
+      />
       <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
         <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
         <p className="text-base lg:text-lg">
