@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Cover } from "../aceternity/cover";
 
 const HeroSection = () => {
   return (
@@ -15,13 +16,12 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
+          <h1 className="text-white mb-4 text-2xl sm:text-3xl lg:text-5xl bg-clip-text font-extrabold font-extrabold bg-gradient-to-r from-primary-400 to-secondary-600">
+            Hi, I&apos;m <Cover>Jérémy Combe</Cover>
+          </h1>
           <h1 className="text-white mb-4 text-2xl sm:text-3xl lg:text-5xl lg:leading-normal font-extrabold">
-            <span className="text-white bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hi, I&apos;m{" "}
-            </span>
-            <br />
             <Typewriter
-              words={["Jérémy", "Full Stack Developer"]}
+              words={["Full Stack Developer"]}
               loop={false}
               cursor
               cursorStyle="_"
@@ -35,7 +35,6 @@ const HeroSection = () => {
             42 is the answer
           </p>
           <div>
-       
             <div className="mt-3">
               <Link
                 href="/cvJcFrench.pdf" // Version en français
